@@ -7,7 +7,12 @@
 
 #include "../common/common.hpp"
 
+#define startOpcode(name) void #name(int8_t*,int64_t,flags*,registers*,registers16*) {
+#define opCode(code) code
+#define endOpcode() }
+
+
 class decoder {
-    void (*func_array[0xFF])(int8_t*,int64_t,flags*,registers*,registers16*);
+    void (*func_array[0xFF])(int8_t*,int64_t,flags*,registers*,registers16*) {};
 };
 #endif //GBCPP_MACROS_H
