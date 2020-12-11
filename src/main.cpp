@@ -12,18 +12,13 @@
 #include <iostream>
 #include "memory.hpp"
 
-byte *memory;
-
 int main(int argc, char *argv[]) {
-    memory = init_memory();
-    if (memory == NULL)
-    {
-        
-        std::cout << "Couldn't initialize memory" << std::endl;
+    memory mem = memory(8192);
+    mem[0] = 62;
+    mem[4096] = 169;
+    if (mem[0] == 62 && mem[4096] == 169) {
+        printf("%s","Memory test completed successfully");
+        return 0;
     }
-    else {
-        std::cout << "Initialized 8KiB of memory" << std::endl;
-    }
-    deinit_memory(memory);
-    return 0;
+    return 1;
 }

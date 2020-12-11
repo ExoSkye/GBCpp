@@ -1,9 +1,18 @@
 #ifndef GBCPP_MEMORY_H
 #define GBCPP_MEMORY_H
 
-typedef unsigned char byte;
+#include "common/common.hpp"
+#include <cstdlib>
+#include <cstdio>
 
-byte *init_memory();
-void deinit_memory(byte *memory);
-
+class memory {
+private:
+    byte* _memory;
+    int _size;
+public:
+    explicit memory(int size);
+    memory() = delete;
+   ~memory();
+   byte& operator[](int index);
+};
 #endif
