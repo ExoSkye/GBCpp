@@ -24,14 +24,16 @@ int main(int argc, char *argv[]) {
     else {
         retval++;
     }
-    decoder testdecode;
-    testdecode.registerOps();
-    registers regs{};
+    registers regs{.A = 0b11111111};
     registers16 reg16s{.AF = reg16(&regs.A,&regs.F),
             .BC = reg16(&regs.B,&regs.C),
             .DE = reg16(&regs.D,&regs.E),
-            .HL = reg16(&regs.H,&regs.L),};
+            .HL = reg16(&regs.H,&regs.L)};
     flags flags_struct{};
-    testdecode.runInstruction(0xCE,0b0000000000000000000000000000000000000000000000000000000010101010,&flags_struct,&regs,&reg16s);
+    regs.H = 8;
+    regs.L = 8;
+    decoder testdecode;
+    testdecode.registerOps();
+    testdecode.runInstruction(0x8E,0,&flags_struct,&regs,&reg16s);
     return retval;
 }

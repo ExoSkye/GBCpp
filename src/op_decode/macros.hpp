@@ -15,10 +15,14 @@ public:
 #define startOpcode(number) op_array[number] = [](int64_t extra,flags* flags,registers* regs,registers16* reg16){
 #define opCode(code) code;
 #define endOpcode() };
+#define extra8 extra & 0b0000000000000000000000000000000000000000000000000000000011111111
+#define extra16 extra & 0b0000000000000000000000000000000000000000000000001111111111111111
+
 #include "opcodes.inl"
 #undef startOpcode
 #undef opCode
 #undef endOpcode
+#undef extra8
     }
     void runInstruction(int index,int64_t extra,flags* flags,registers* regs,registers16* reg16) {
         op_array[index](extra,flags,regs,reg16);
