@@ -16,7 +16,7 @@ opCode(
 endOpcode()
 startOpcode(0x3B)
 opCode(
-        reg16->SP--;
+        reg16->SP-= 1;
 )
 endOpcode()
 //TODO: Implement system clock
@@ -29,31 +29,31 @@ endOpcode()
 */
 startOpcode(0x34)
 opCode (
-       reg16->HL++;
+       reg16->HL+= 1;
 )
 endOpcode()
 startOpcode(0x3C)
 opCode (
-       regs->A++;
+       regs->A+= 1;
 )
 endOpcode()
 startOpcode(0x04)
 opCode (
-       regs->B++;
+       regs->B+= 1;
 )
 endOpcode()
 startOpcode(0x04)
 opCode (
-       regs->B++;
+       regs->B+= 1;
 )
 endOpcode()
 startOpcode(0x04)
 opCode ()
-       regs->B++;
+       regs->B+= 1;
 )
 endOpcode()
 startOpcode(0x03)
 opCode ()
-       reg16->BC++;
+       reg16->BC+= 1;
 )
 endOpcode()
