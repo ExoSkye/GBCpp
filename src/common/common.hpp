@@ -2,6 +2,8 @@
 // Created by protobit on 11/12/2020.
 //
 
+#pragma warning(disable: 4333)
+
 #ifndef GBCPP_COMMON_H
 #define GBCPP_COMMON_H
 

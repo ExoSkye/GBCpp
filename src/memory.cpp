@@ -1,5 +1,6 @@
 #include "memory.hpp"
 
+#pragma warning(disable: 4172)
 
 memory::memory(int size) {
     _size = size;
