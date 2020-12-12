@@ -101,6 +101,8 @@ struct registers16 {
     reg16 BC;
     reg16 DE;
     reg16 HL;
+    uint16_t SP;
+    uint16_t PC;
 };
 
 #endif //GBCPP_COMMON_H
