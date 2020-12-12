@@ -28,32 +28,32 @@ opCode(
 endOpcode()
 */
 startOpcode(0x34)
-opCode {
+opCode (
        reg16->HL++;
-}
+)
 endOpcode()
 startOpcode(0x3C)
-opCode {
+opCode (
        regs->A++;
-}
+)
 endOpcode()
 startOpcode(0x04)
-opCode {
+opCode (
        regs->B++;
-}
+)
 endOpcode()
 startOpcode(0x04)
-opCode {
+opCode (
        regs->B++;
-}
+)
 endOpcode()
 startOpcode(0x04)
-opCode {
+opCode ()
        regs->B++;
-}
+)
 endOpcode()
 startOpcode(0x03)
-opCode {
+opCode ()
        reg16->BC++;
-}
+)
 endOpcode()
