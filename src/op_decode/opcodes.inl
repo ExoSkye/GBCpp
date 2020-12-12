@@ -48,12 +48,12 @@ opCode (
 )
 endOpcode()
 startOpcode(0x04)
-opCode ()
+opCode (
        regs->B+= 1;
 )
 endOpcode()
 startOpcode(0x03)
-opCode ()
+opCode (
        reg16->BC+= 1;
 )
 endOpcode()
