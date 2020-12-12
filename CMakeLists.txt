@@ -7,3 +7,9 @@ set(PLATFORM "GBCpp" CACHE STRING "Platform selection (affects output executable
 set(SOURCES src/main.cpp src/memory.hpp src/memory.cpp)
 add_executable(GBCpp ${SOURCES})
 set_target_properties(GBCpp PROPERTIES OUTPUT_NAME ${PLATFORM})
+
+if(CMAKE_BUILD_TYPE MATCHES "Debug")
+    target_compile_definitions(GBCpp PUBLIC _DEBUG)
+else()
+    target_compile_definitions(GBCpp PUBLIC _NDEBUG)
+endif()

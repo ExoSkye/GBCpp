@@ -25,7 +25,17 @@ public:
 #undef extra8
     }
     void runInstruction(int index,int64_t extra,flags* flags,registers* regs,registers16* reg16) {
-        op_array[index](extra,flags,regs,reg16);
+#ifdef _DEBUG
+        printf("Executing instruction %X\n",index);
+#endif
+        if (!op_array[index]) {
+#ifdef _DEBUG
+            printf("Instruction not implemented\n");
+#endif
+        }
+        else {
+            op_array[index](extra, flags, regs, reg16);
+        }
     }
 };
 #endif //GBCPP_MACROS_H
