@@ -52,3 +52,43 @@ opCode (
        reg16->BC+= 1;
 )
 endOpcode()
+startOpcode(0x0C)
+opCode (
+        regs->C+= 1;
+)
+endOpcode()
+startOpcode(0x14)
+opCode (
+        regs->D+= 1;
+)
+endOpcode()
+startOpcode(0x13)
+opCode (
+        reg16->DE+= 1;
+)
+endOpcode()
+startOpcode(0x1C)
+opCode (
+        regs->E+= 1;
+)
+endOpcode()
+startOpcode(0x24)
+opCode (
+        regs->H+= 1;
+)
+endOpcode()
+startOpcode(0x23)
+opCode (
+        reg16->HL+= 1;
+)
+endOpcode()
+startOpcode(0x2C)
+opCode (
+        regs->L+= 1;
+)
+endOpcode()
+startOpcode(0x33)
+opCode (
+        reg16->SP+= 1;
+)
+endOpcode()
