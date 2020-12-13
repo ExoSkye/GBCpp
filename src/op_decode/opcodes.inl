@@ -47,11 +47,6 @@ opCode (
        regs->B+= 1;
 )
 endOpcode()
-startOpcode(0x04)
-opCode (
-       regs->B+= 1;
-)
-endOpcode()
 startOpcode(0x03)
 opCode (
        reg16->BC+= 1;
