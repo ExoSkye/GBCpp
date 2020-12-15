@@ -92,3 +92,59 @@ opCode (
         reg16->SP+= 1;
 )
 endOpcode()
+startOpcode(0x8F)
+opCode(
+    if (regs->A + regs->A > 0b11111111) {
+        flags->carry = true;
+    }
+    regs->A += regs->A;
+)
+endOpcode()
+startOpcode(0x88)
+opCode(
+    if (regs->A + regs->B > 0b11111111) {
+        flags->carry = true;
+    }
+    regs->A += regs->B;
+    )
+endOpcode()
+startOpcode(0x89)
+opCode(
+    if (regs->A + regs->C > 0b11111111) {
+        flags->carry = true;
+    }
+    regs->A += regs->C;
+)
+endOpcode()
+startOpcode(0x8A)
+opCode(
+    if (regs->A + regs->D > 0b11111111) {
+        flags->carry = true;
+    }
+    regs->A += regs->D;
+)
+endOpcode()
+startOpcode(0x8B)
+opCode(
+    if (regs->A + regs->E > 0b11111111) {
+        flags->carry = true;
+    }
+    regs->A += regs->E;
+)
+endOpcode()
+startOpcode(0x8C)
+opCode(
+    if (regs->A + regs->H > 0b11111111) {
+        flags->carry = true;
+    }
+    regs->A += regs->H;
+    )
+endOpcode()
+startOpcode(0x8D)
+opCode(
+    if (regs->A + regs->L > 0b11111111) {
+        flags->carry = true;
+    }
+    regs->A += regs->L;
+    )
+endOpcode()
